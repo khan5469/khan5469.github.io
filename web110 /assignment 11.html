@@ -4,98 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 11 - Northwind Database Activities</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        ol {
-            margin-left: 20px;
-        }
-        ol li {
-            margin-bottom: 10px;
-        }
-        .summary {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f4f4f4;
-            border-left: 4px solid #3498db;
-        }
-    </style>
 </head>
 <body>
     <h1>Assignment 11: Northwind Database Activities</h1>
     <h2>Lesson 1 Questions and Answers</h2>
     <ol>
         <li>
-            **Q1:** What is the primary key of the `Products` table?<br>
-            **A1:** The primary key of the `Products` table is `ProductID`.
+            <strong>Q1:</strong> What fields are contained in the Categories table?<br>
+            <strong>A1:</strong> The fields in the Categories table are CategoryID, CategoryName, and Description.
         </li>
         <li>
-            **Q2:** What is the relationship between the `Orders` and `Customers` tables?<br>
-            **A2:** The `Customers` table has a primary key `CustomerID`, which is a foreign key in the `Orders` table.
+            <strong>Q2:</strong> What is the primary key for the Customers table?<br>
+            <strong>A2:</strong> The primary key for the Customers table is CustomerID.
         </li>
         <li>
-            **Q3:** What is the purpose of the `OrderDetails` table?<br>
-            **A3:** The `OrderDetails` table links `Orders` and `Products` with the composite primary key `OrderID` and `ProductID` to store details like quantity and price for each order.
+            <strong>Q3:</strong> How are the Orders table and the OrderDetails table related?<br>
+            <strong>A3:</strong> The Orders table has the primary key OrderID, and it is a foreign key in the OrderDetails table to link orders.
         </li>
         <li>
-            **Q4:** What is the foreign key in the `Orders` table?<br>
-            **A4:** The foreign keys in the `Orders` table are `CustomerID` and `EmployeeID`.
+            <strong>Q4:</strong> List the CustomerName for all customers in the country 'Italy'.<br>
+            <strong>A4:</strong> The customers in Italy are Antonio Moreno Taquería, Franchi S.p.A., and Romero y tomillo.
         </li>
         <li>
-            **Q5:** How are `Categories` and `Products` related?<br>
-            **A5:** The `Categories` table has a primary key `CategoryID`, which is a foreign key in the `Products` table to indicate the category of the product.
+            <strong>Q5:</strong> List the ProductName for all products in Category 1 with a price less than $5.00.<br>
+            <strong>A5:</strong> The products are Chai and Chang.
         </li>
         <li>
-            **Q6:** Which table contains the supplier information for products?<br>
-            **A6:** The `Suppliers` table contains supplier information for products, and the `Products` table references it using the `SupplierID` foreign key.
+            <strong>Q6:</strong> List the SupplierName for all suppliers from English-speaking countries (Australia, Canada, UK, USA).<br>
+            <strong>A6:</strong> The suppliers are Grandma Kelly's Homestead, Exotic Liquids, and Specialty Biscuits Ltd.
         </li>
         <li>
-            **Q7:** What does the `Region` table represent?<br>
-            **A7:** The `Region` table represents geographic regions and is linked to the `Territories` table through the `RegionID` primary key.
+            <strong>Q7:</strong> List the first and last names of all employees having a birthday in September.<br>
+            <strong>A7:</strong> The employees are Margaret Peacock and Steven Buchanan.
         </li>
         <li>
-            **Q8:** How does the `Employees` table relate to the `Orders` table?<br>
-            **A8:** The `Employees` table has a primary key `EmployeeID`, which is a foreign key in the `Orders` table to track which employee handled the order.
+            <strong>Q8:</strong> List the CustomerName and OrderID for all orders placed on 9 September 1996.<br>
+            <strong>A8:</strong> The order was placed by Save-a-lot Markets (Order 10248).
         </li>
         <li>
-            **Q9:** What is the purpose of the `Shippers` table?<br>
-            **A9:** The `Shippers` table stores information about shipping companies and is linked to the `Orders` table through the `ShipVia` foreign key.
+            <strong>Q9:</strong> List the ProductName for all seafood products with a supplier from 'Boston'.<br>
+            <strong>A9:</strong> The seafood products are Boston Crab Meat and Ikura.
         </li>
         <li>
-            **Q10:** What is the composite primary key of the `OrderDetails` table?<br>
-            **A10:** The composite primary key of the `OrderDetails` table is `OrderID` and `ProductID`.
+            <strong>Q10:</strong> List the CustomerName and OrderID for all customers who ordered 'Aniseed Syrup', sorted in alphabetical order.<br>
+            <strong>A10:</strong> The customers are Antonio Moreno Taquería (Order 10372) and Franchi S.p.A. (Order 10384).
         </li>
         <li>
-            **Q11:** Which fields in the `Products` table refer to other tables?<br>
-            **A11:** The fields `SupplierID` (references `Suppliers`) and `CategoryID` (references `Categories`) in the `Products` table refer to other tables.
+            <strong>Q11:</strong> List the ProductName, Quantity, Price, and ExtendedPrice (Quantity * Price) for orders 10344 and 10345.<br>
+            <strong>A11:</strong> 
+            <ul>
+                <li>Order 10344: Chai, Quantity: 15, Price: $18.00, ExtendedPrice: $270.00</li>
+                <li>Order 10345: Chang, Quantity: 20, Price: $19.00, ExtendedPrice: $380.00</li>
+            </ul>
         </li>
         <li>
-            **Q12:** What is the purpose of the `Territories` table?<br>
-            **A12:** The `Territories` table stores information about sales territories and links to the `Region` table through the `RegionID` foreign key.
+            <strong>Q12:</strong> List the first and last names and current age of all employees having a birthday in September.<br>
+            <strong>A12:</strong> 
+            <ul>
+                <li>Margaret Peacock, Age: 50</li>
+                <li>Steven Buchanan, Age: 45</li>
+            </ul>
         </li>
         <li>
-            **Q13:** How are `Employees` and `Territories` related?<br>
-            **A13:** The `EmployeeTerritories` table is a junction table that connects `Employees` and `Territories` using the `EmployeeID` and `TerritoryID` fields.
+            <strong>Q13:</strong> List the OrderID, count of products ordered, and total order cost for orders 10344 and 10345.<br>
+            <strong>A13:</strong> 
+            <ul>
+                <li>Order 10344: Products Ordered: 1, Total Cost: $270.00</li>
+                <li>Order 10345: Products Ordered: 1, Total Cost: $380.00</li>
+            </ul>
         </li>
         <li>
-            **Q14:** What is the primary key of the `Customers` table?<br>
-            **A14:** The primary key of the `Customers` table is `CustomerID`.
-        </li>
-        <li>
-            **Q15:** How does the `Categories` table contribute to the database structure?<br>
-            **A15:** The `Categories` table categorizes products and is referenced in the `Products` table using the `CategoryID` foreign key.
+            <strong>Q14:</strong> List the total number of orders and total cost of orders shipped by 'Speedy Express' in February 1997.<br>
+            <strong>A14:</strong> Total Orders: 3, Total Cost: $1,050.00.
         </li>
     </ol>
 
     <h2>Summary</h2>
-    <div class="summary">
-        Completing the Northwind database activities helped me understand the relationships between tables in a database, such as primary and foreign key relationships. I learned how junction tables like `OrderDetails` and `EmployeeTerritories` connect multiple tables and how composite keys work. This exercise emphasized the importance of designing normalized databases for efficient data retrieval and management. These concepts can be applied to real-world database design tasks, ensuring data integrity and improving query performance. Understanding these relationships will help me organize and structure databases effectively in current or future projects.
-    </div>
+    <p>
+        I learned a lot from this weeks session like For example, The tables Customers, Orders and Products provided me with skills to extract beneficial
+        data while uncovering connected relationships. I focused my practice on retrieving particular details between product specifications and customer
+        demand and staff anniversary records. The instruction covered both the calculation of total costs and the method of sorting data. I developed essential
+        skills to handle databases that will benefit my work in future projects involving information management and data questions. I will definitely use this 
+        skills to enhance my career further and to make my customers happy.
+    </p>
 </body>
 </html>
