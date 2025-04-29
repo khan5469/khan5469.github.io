@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript - Assignment 15b</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Empty heading to be populated with JavaScript -->
+  <h1 id="Ayaan Khan"></h1>
+  
+  <!-- Empty paragraph to display the current date and time -->
+  <p id="04/28/2025"></p>
+  
+  <!-- First canvas to display the student's name -->
+  <canvas id="nameCanvas" width="400" height="100" style="border: 1px solid black;"></canvas>
+  
+  <!-- Second canvas to draw shapes -->
+  <canvas id="shapeCanvas" width="400" height="200" style="border: 1px solid black;"></canvas>
+  
+  <!-- Paragraph describing the learning -->
+  <p>
+    Completing this activity taught me how to dynamically modify HTML elements using JavaScript. I learned how to interact with the DOM to display content,
+    such as my name and the current date/time, and how to use the canvas API to create drawings. This knowledge is highly applicable in creating interactive
+    and visually engaging web applications. In the future, I plan to use these skills to build creative projects, such as interactive games or data visualizations,
+    using JavaScript and canvas.
+  </p>
+
+  <script>
+    // Populate the heading with the student's name
+    document.getElementById('student-name').textContent = "Ayaan Khan";
+
+    // Display the current date and time in the paragraph
+    const currentDate = new Date();
+    document.getElementById('current-date').textContent = 
+      `Current Date and Time: ${currentDate.toLocaleString()}`;
+
+    // Write the student's name on the first canvas
+    const nameCanvas = document.getElementById('nameCanvas');
+    const ctx1 = nameCanvas.getContext('2d');
+    ctx1.font = "30px Arial";
+    ctx1.fillStyle = "blue";
+    ctx1.fillText("Your Name Here", 50, 50);
+
+    // Draw shapes on the second canvas
+    const shapeCanvas = document.getElementById('shapeCanvas');
+    const ctx2 = shapeCanvas.getContext('2d');
+
+    // Draw a line
+    ctx2.beginPath();
+    ctx2.moveTo(50, 50);
+    ctx2.lineTo(350, 50);
+    ctx2.strokeStyle = "red";
+    ctx2.lineWidth = 2;
+    ctx2.stroke();
+
+    // Draw a circle
+    ctx2.beginPath();
+    ctx2.arc(200, 150, 50, 0, 2 * Math.PI);
+    ctx2.fillStyle = "green";
+    ctx2.fill();
+
+    // Draw a rectangle
+    ctx2.beginPath();
+    ctx2.rect(100, 100, 200, 50);
+    ctx2.strokeStyle = "blue";
+    ctx2.lineWidth = 3;
+    ctx2.stroke();
+  </script>
+</body>
+</html>
